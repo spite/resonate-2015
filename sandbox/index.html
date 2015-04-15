@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Resonate 2015 | Workshop </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				padding: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script src="js/three.min.js"></script>
+	<script src="js/framework.js"></script>
+
+	<script src="myEffect.js"></script>
+
+	<script type="text/javascript">
+
+window.addEventListener( 'load', function() {
+
+	var effect = new MyEffect();
+	effect.init();
+
+	function animate() {
+
+		requestAnimationFrame( animate );
+
+		effect.update();
+		effect.render();
+
+	}
+
+	animate();
+
+} );
+
+	</script>
+
+</html>
