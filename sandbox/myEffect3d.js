@@ -16,7 +16,7 @@ var MyEffect = function ( sound ) {
 
 	var sphere = new THREE.Mesh(
 		new THREE.SphereGeometry( 1, 40, 20 ),
-		new THREE.MeshPhongMaterial( { color: 0xC0C0C0, shading: THREE.FlatShading } )
+		new THREE.MeshPhongMaterial( { color: 0xff00ff, shading: THREE.FlatShading } )
 	);
 	scene.add( sphere );
 
@@ -41,12 +41,13 @@ var MyEffect = function ( sound ) {
 
 		sound.update();
 
-		var scale = sound.getFreqRange( 10, 20 ) + 100;
+		var scale = sound.getFreqRange( 10, 20 ) * 200 + 100;
 
 		sphere.rotation.x = scale * 0.01;
 		sphere.rotation.y = scale * 0.01;
 		sphere.scale.set( scale, scale, scale );
-		sphere.material.color.b = scale / 255;
+
+		sphere.material.color.b = Math.pow( sound.getFreqRange( 30, 40 ), 2 ) * 2;
 
 		renderer.render( scene, camera );
 

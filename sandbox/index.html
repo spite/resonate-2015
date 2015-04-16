@@ -25,7 +25,11 @@
 
 	<script type="text/javascript">
 
-		var sound = new Sound( { /* microphone: true, */ track: 'assets/track.ogg' } );
+		var sound = new Sound( {
+			// debug: true,
+			// microphone: true,
+			track: 'assets/track.ogg'
+		} );
 
 		var effect = new MyEffect( sound );
 		effect.resize( window.innerWidth, window.innerHeight );

@@ -21,9 +21,9 @@ var MyEffect = function ( sound ) {
 
 		sound.update();
 
-		var scale = sound.getFreqRange( 10, 20 ) + 100;
+		var scale = sound.getFreqRange( 10, 20 ) * 200 + 100;
 
-		context.fillStyle = '#ff00ff';
+		context.fillStyle = '#ff0044';
 
 		context.clearRect( 0, 0, canvas.width, canvas.height );
 		context.beginPath();
