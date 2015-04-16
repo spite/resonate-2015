@@ -20,30 +20,29 @@
 
 	</body>
 
+	<script src="js/sound.js"></script>
+
 	<script src="js/three.min.js"></script>
-	<script src="js/framework.js"></script>
 
 	<script src="myEffect.js"></script>
 
 	<script type="text/javascript">
 
-window.addEventListener( 'load', function() {
+		window.addEventListener( 'load', function() {
 
-	var effect = new MyEffect();
-	effect.init();
+			var effect = new MyEffect();
+			document.body.appendChild( effect.dom );
 
-	function animate() {
+			function animate() {
 
-		requestAnimationFrame( animate );
+				requestAnimationFrame( animate );
+				effect.update();
 
-		effect.update();
-		effect.render();
+			}
 
-	}
+			animate();
 
-	animate();
-
-} );
+		} );
 
 	</script>
 

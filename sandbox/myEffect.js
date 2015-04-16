@@ -1,44 +1,37 @@
-var MyEffect = function() {
 
-	Effect.call( this );
+var MyEffect = function () {
 
-	this.circle = new Circle();
-	this.sphere = new Sphere();
+	// canvas
 
-} 
+	var canvas = document.createElement( 'canvas' );
+	canvas.width = 512;
+	canvas.height = 512;
 
-MyEffect.prototype = Object.create( Effect.prototype );
+	var context = canvas.getContext( '2d' );
 
-MyEffect.prototype.init = function() {
+	// sound
 
-	Effect.prototype.init.call( this )
+	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track' } );
 
-	/* Add you init code */
+	this.dom = canvas;
 
-	this.circle.init();
-	this.sphere.init();
+	this.resize = function () {
 
-}
+	};
 
-MyEffect.prototype.update = function() {
+	this.update = function () {
 
-	Effect.prototype.update.call( this )
+		sound.update();
 
-	/* Add you update code */
+		var scale = sound.getFreqRange( 10, 20 ) + 50;
 
-	reactive.update();
-	this.circle.update( .01 * reactive.getFreqRange( 0, 10 ), .01 * reactive.getFreqRange( 10, 20 ), 0 );
-	this.sphere.update( .01 * reactive.getFreqRange( 0, 10 ), .01 * reactive.getFreqRange( 10, 20 ), 1 + .01 * reactive.getFreqRange( 20, 30  ) );
+		context.fillStyle = '#ff00ff';
 
-}
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.beginPath();
+		context.arc( canvas.width * 0.5, canvas.width * 0.5, scale, 0, 2 * Math.PI, false );
+		context.fill();
 
-MyEffect.prototype.render = function() {
+	};
 
-	Effect.prototype.render.call( this )
-
-	/* Add you render code */
-
-	this.circle.render();
-	this.sphere.render();
-
-}
+};
