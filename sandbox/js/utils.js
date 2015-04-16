@@ -28,11 +28,23 @@ function Sound( settings ) {
 
 }
 
+Sound.prototype.start = function () {
+
+	var loop = function() {
+		requestAnimationFrame( loop );
+		this.update();
+	}.bind( this );
+
+	loop();
+
+}
+
 Sound.prototype.connectToMicrophone = function() {
 
 	function onMediaStream( stream ) {
 		var r = this.context.createMediaStreamSource( stream );
 		r.connect( this.analyser );
+		this.start();
 	};
 
 	navigator.getUserMedia(
@@ -60,6 +72,8 @@ Sound.prototype.loadAudioTrack = function( file ) {
 				source.start( 1 );
 
 				this.analyser.connect( this.context.destination );
+
+				this.start();
 
 			}.bind( this ),
 

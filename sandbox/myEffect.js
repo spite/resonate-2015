@@ -17,9 +17,7 @@ var MyEffect = function ( sound ) {
 
 	};
 
-	this.update = function () {
-
-		sound.update();
+	this.update = function ( time ) {
 
 		var scale = sound.getFreqRange( 10, 20 ) * 200 + 100;
 
