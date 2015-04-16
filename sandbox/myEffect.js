@@ -4,9 +4,6 @@ var MyEffect = function () {
 	// canvas
 
 	var canvas = document.createElement( 'canvas' );
-	canvas.width = 512;
-	canvas.height = 512;
-
 	var context = canvas.getContext( '2d' );
 
 	// sound
@@ -15,7 +12,10 @@ var MyEffect = function () {
 
 	this.dom = canvas;
 
-	this.resize = function () {
+	this.resize = function ( width, height ) {
+
+		canvas.width = width;
+		canvas.height = height;
 
 	};
 
@@ -29,7 +29,7 @@ var MyEffect = function () {
 
 		context.clearRect( 0, 0, canvas.width, canvas.height );
 		context.beginPath();
-		context.arc( canvas.width * 0.5, canvas.width * 0.5, scale, 0, 2 * Math.PI, false );
+		context.arc( canvas.width * 0.5, canvas.height * 0.5, scale, 0, 2 * Math.PI, false );
 		context.fill();
 
 	};

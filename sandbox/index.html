@@ -21,28 +21,30 @@
 	</body>
 
 	<script src="js/sound.js"></script>
-
 	<script src="js/three.min.js"></script>
 
 	<script src="myEffect.js"></script>
 
 	<script type="text/javascript">
 
-		window.addEventListener( 'load', function() {
+		var effect = new MyEffect();
+		effect.resize( window.innerWidth, window.innerHeight );
+		document.body.appendChild( effect.dom );
 
-			var effect = new MyEffect();
-			document.body.appendChild( effect.dom );
+		window.addEventListener( 'resize', function () {
 
-			function animate() {
-
-				requestAnimationFrame( animate );
-				effect.update();
-
-			}
-
-			animate();
+			effect.resize( window.innerWidth, window.innerHeight );
 
 		} );
+
+		function animate() {
+
+			requestAnimationFrame( animate );
+			effect.update();
+
+		}
+
+		animate();
 
 	</script>
 
