@@ -39,7 +39,7 @@ var MyEffect = function ( sound ) {
 
 	this.update = function ( time ) {
 
-		sphere.rotation.x = sound.getFreqRange( 10, 20 );
+		sphere.rotation.x = sound.getFreqRange( 10, 20 ) * 5;
 		sphere.rotation.y = time * 0.001;
 
 		var scale = sound.getFreqRange( 10, 20 ) * 200 + 100;
