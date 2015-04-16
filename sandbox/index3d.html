@@ -43,14 +43,14 @@
 
 		} );
 
-		function animate() {
+		function animate( time ) {
 
 			requestAnimationFrame( animate );
-			effect.update();
+			effect.update( time );
 
 		}
 
-		animate();
+		animate( performance.now() );
 
 	</script>
 

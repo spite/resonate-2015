@@ -37,13 +37,13 @@ var MyEffect = function ( sound ) {
 
 	};
 
-	this.update = function () {
+	this.update = function ( time ) {
 
+		sphere.rotation.x = sound.getFreqRange( 10, 20 );
+		sphere.rotation.y = time * 0.001;
 
 		var scale = sound.getFreqRange( 10, 20 ) * 200 + 100;
 
-		sphere.rotation.x = scale * 0.01;
-		sphere.rotation.y = scale * 0.01;
 		sphere.scale.set( scale, scale, scale );
 
 		sphere.material.color.b = Math.pow( sound.getFreqRange( 30, 40 ), 2 ) * 2;
