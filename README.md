@@ -42,9 +42,9 @@ These are some suggerences for code editors:
 
 The folder ``sandbox`` contains the files.
 
-- ``index.html``example of 2D Canvas rendering
+- ``index.html`` example of 2D Canvas rendering
 - ``index3d.html`` example of 3D WebGL rendering with three.js
-- 
+
 #### License ####
 
 MIT licensed
