@@ -7,7 +7,7 @@ var MyEffect = function () {
 
 	// renderer
 
-	var renderer = new THREE.WebGLRenderer( { antialiasing: true } );
+	var renderer = new THREE.WebGLRenderer( { antialias: true } );
 
 	// camera
 
