@@ -49,6 +49,6 @@ The folder ``sandbox`` contains the files.
 
 MIT licensed
 
-Copyright (C) 2015
-Jaume Sanchez Elias http://www.clicktorelease.com
+Copyright (C) 2015  
+Jaume Sanchez Elias http://www.clicktorelease.com  
 Ricardo Cabello http://mrdoob.com

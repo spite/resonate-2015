@@ -27,7 +27,9 @@
 
 	<script type="text/javascript">
 
-		var effect = new MyEffect();
+		var sound = new Sound( { /* microphone: true, */ track: 'assets/track' } );
+
+		var effect = new MyEffect( sound );
 		effect.resize( window.innerWidth, window.innerHeight );
 		document.body.appendChild( effect.dom );
 

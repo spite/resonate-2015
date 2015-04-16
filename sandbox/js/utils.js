@@ -117,8 +117,11 @@ Sound.prototype.enableDebugMode = function() {
 
 	this.spectrumCanvas = document.createElement( 'canvas' );
     this.spectrumCanvas.width = 256;
-    this.spectrumCanvas.height = 64;
+    this.spectrumCanvas.height = 128;
     this.spectrumCanvas.setAttribute( 'id', 'spectrumCanvas' );
+    this.spectrumCanvas.style.position = 'absolute';
+    this.spectrumCanvas.style.left = 0;
+    this.spectrumCanvas.style.position = 0;
     this.spectrumCtx = this.spectrumCanvas.getContext( '2d' );
 
     document.body.appendChild( this.spectrumCanvas );
@@ -129,16 +132,18 @@ Sound.prototype.drawDebug = function() {
 
 	var step = 10;
 	this.spectrumCtx.clearRect( 0, 0, this.spectrumCanvas.width, this.spectrumCanvas.height );
+	var h = this.spectrumCanvas.height - 25;
+
     for( var j = 0; j < this.frequencyData.length; j+= step ) {
         var v = 255 * this.getFreqRange( j, j + step );
         this.spectrumCtx.fillStyle = 'rgb(255,' + j + ',' + j + ')';
         this.spectrumCtx.beginPath();
-        this.spectrumCtx.fillRect( j, this.spectrumCanvas.height, step, - v * this.spectrumCanvas.height / 256 );
+        this.spectrumCtx.fillRect( j, h, step, - v * h / 256 );
         this.spectrumCtx.font = "normal 10px Arial";
         this.spectrumCtx.save();
         this.spectrumCtx.rotate( Math.PI / 2 );
         this.spectrumCtx.beginPath();
-        this.spectrumCtx.fillText( j, 10, -j );
+        this.spectrumCtx.fillText( j, this.spectrumCanvas.height - 20, -j );
         this.spectrumCtx.restore();
     }
 
