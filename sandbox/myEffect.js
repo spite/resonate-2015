@@ -1,14 +1,16 @@
 
 var MyEffect = function () {
 
+	// sound
+
+	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track' } );
+
 	// canvas
 
 	var canvas = document.createElement( 'canvas' );
 	var context = canvas.getContext( '2d' );
 
-	// sound
-
-	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track' } );
+	//
 
 	this.dom = canvas;
 
