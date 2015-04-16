@@ -42,13 +42,13 @@ These are some suggerences for code editors:
 
 The folder ``sandbox`` contains the files.
 
-- ``index.html`` example of 2D Canvas rendering
-- ``index3d.html`` example of 3D WebGL rendering with three.js
+- ``index.html`` example of [2D Canvas](http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/) rendering
+- ``index3d.html`` example of 3D WebGL rendering with [three.js](http://threejs.org/docs/)
 
 #### License ####
 
 MIT licensed
 
-Copyright (C) 2015 
+Copyright (C) 2015
 Jaume Sanchez Elias http://www.clicktorelease.com
-Ricardo Cabello http://www.mrdoob.coma
+Ricardo Cabello http://mrdoob.com

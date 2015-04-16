@@ -106,3 +106,22 @@ Sound.prototype.getFreqRange = function( from, to ) {
     return v / ( to - from );
 
 }
+
+// var reactive = new ReactiveSound( { track: 'assets/track' } );
+// var reactive = new ReactiveSound( { microphone: true } );
+
+function Mouse() {
+
+	this.x = 0;
+	this.y = 0;
+
+	document.addEventListener( 'mousemove', function( e ) {
+
+		this.x = e.pageX;
+		this.y = e.pageY;
+
+	}.bind( this ) );
+
+}
+
+// var mouse = new Mouse();
