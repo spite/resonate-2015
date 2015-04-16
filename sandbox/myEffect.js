@@ -3,7 +3,7 @@ var MyEffect = function () {
 
 	// sound
 
-	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track' } );
+	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track', debug: true } );
 
 	// canvas
 
@@ -25,7 +25,7 @@ var MyEffect = function () {
 
 		sound.update();
 
-		var scale = sound.getFreqRange( 10, 20 ) + 50;
+		var scale = 200 * sound.getFreqRange( 10, 20 ) + 50;
 
 		context.fillStyle = '#ff00ff';
 

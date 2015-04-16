@@ -3,7 +3,7 @@ var MyEffect = function () {
 
 	// sound
 
-	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track' } );
+	var sound = new Sound( { /* microphone: true,*/ track: 'assets/track', debug: true } );
 
 	// renderer
 
@@ -45,7 +45,7 @@ var MyEffect = function () {
 
 		sound.update();
 
-		var scale = sound.getFreqRange( 10, 20 );
+		var scale = 200 * sound.getFreqRange( 10, 20 );
 
 		sphere.rotation.x = scale * 0.01;
 		sphere.rotation.y = scale * 0.01;
