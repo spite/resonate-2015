@@ -46,9 +46,6 @@ Sound.prototype.connectToMicrophone = function() {
 Sound.prototype.loadAudioTrack = function( file ) {
 
 	var a = new Audio();
-	var ext = '';
-	if( ( a.canPlayType && a.canPlayType( 'audio/ogg; codecs="vorbis"' ).replace( /no/, '' ) ) ) ext = 'ogg';
-	if( ( a.canPlayType && a.canPlayType( 'audio/mpeg;' ).replace( /no/, '') ) ) ext = 'mp3';
 
 	var processData = function( buffer ) {
 
@@ -75,7 +72,7 @@ Sound.prototype.loadAudioTrack = function( file ) {
 	}.bind( this );
 
 	var oReq = new XMLHttpRequest();
-	oReq.open( 'GET', file + '.' + ext, true);
+	oReq.open( 'GET', file, true );
 	oReq.responseType = 'arraybuffer';
 	oReq.onload = function (oEvent) {
 
